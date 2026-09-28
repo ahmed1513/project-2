@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/demo-api
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.4
